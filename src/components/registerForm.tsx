@@ -45,7 +45,8 @@ export default function RegisterForm({ onReload }: IProps) {
       action.resetForm();
       toast.success("Register Success!");
       onReload();
-    } catch (error: any) {
+    } catch (error) {
+      if (axios.isAxiosError(error))
       toast.error(error.response?.data?.message || "Register Failed");
       console.log(error);
     }

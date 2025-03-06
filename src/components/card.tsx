@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { object } from "yup";
 
 interface ICardBlog {
   title: string;

@@ -1,11 +1,12 @@
 import { IBlog } from "@/type";
 import { FaFacebook, FaLinkedin, FaTwitter, FaWhatsapp } from "react-icons/fa";
+import Image from 'next/image';
 
 export async function generateMetadata({
   params,
 }: {
-  params: { id: string };
-}): Promise<{ title: string; openGraph: { images: string[] } }> {
+  params: Promise<{ id: string }>;
+}) {
   const { id } = await params;
   const res = await fetch(
     `https://jazzygirl-us.backendless.app/api/data/Blogs/${id}?loadRelations=author`
@@ -37,7 +38,7 @@ export default async function page({
         <aside className="md:w-1/3 w-full flex md:block justify-center md:justify-start mb-6 md:mb-0">
           <div className="bg-white bg-opacity-90 p-4 rounded-lg shadow-lg flex md:flex-col items-center gap-4">
             <button className="text-white bg-green-600 py-2 px-4 rounded-lg">
-              <a href="/">Kembali</a>
+              
             </button>
 
             <p className="text-gray-700 font-semibold text-lg">Bagikan</p>
@@ -84,7 +85,7 @@ export default async function page({
           </h1>
           <p className="text-gray-700 text-lg">{data.author.name}</p>
 
-          <img
+          <Image
             src={data.thumbnail}
             alt="thumbnail"
             className="rounded-lg shadow-lg w-full max-h-96 object-cover"

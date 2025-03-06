@@ -20,7 +20,7 @@ export interface IAuthor {
 
 
 export interface IBlog {
-  imageUrl: any;
+  image: string;
   objectId: string;
   title: string;
   category: string;

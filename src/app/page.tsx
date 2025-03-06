@@ -23,9 +23,9 @@ export default async function Home() {
               <Card
                 category={item.category}
                 title={item.title}
-                thumbnail={item.thumbnail || "/default-thumbnail.jpg"} 
-                name={item.author?.name || "Unknown"} 
-                email={item.author?.email || "Unknown"} 
+                thumbnail={item.thumbnail || "/default-thumbnail.jpg"}
+                name={item.author?.name || "Unknown"}
+                email={item.author?.email || "Unknown"}
                 objectId={item.objectId}
               />
             </div>

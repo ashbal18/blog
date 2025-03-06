@@ -54,78 +54,81 @@ export default function LoginForm() {
   return (
     <div className="relative h-screen w-screen flex justify-center items-center bg-gray-100">
       <div className="relative z-10 w-[90%] md:w-full md:max-w-[400px] rounded-xl bg-white shadow-xl p-8">
-        <h2 className="text-3xl font-semibold text-center text-gray-800">Sign In</h2>
-        <p className="text-center text-gray-600 mb-6">Welcome back! Please enter your details.</p>
-            <Formik
-              initialValues={initialValues}
-              validationSchema={LoginSchema}
-              onSubmit={onLogin}
-            >
-              {(props: FormikProps<ILoginForm>) => {
-                const { errors, touched } = props;
-                return (
-                  <Form>
-                    <div className="mb-4">
-                      <label
-                        htmlFor="email"
-                        className="block text-gray-700 text-sm font-bold mb-2"
-                      >
-                        Email
-                      </label>
-                      <Field
-                        type="email"
-                        name="login"
-                        placeholder="Enter your email"
-                        className="w-full p-2 border rounded"
-                      />
-                      {touched.login && errors.login && (
-                        <div className="text-red-500 text-sm mt-1">
-                          {errors.login}
-                        </div>
-                      )}
+        <h2 className="text-3xl font-semibold text-center text-gray-800">
+          Sign In
+        </h2>
+        <p className="text-center text-gray-600 mb-6">
+          Welcome back! Please enter your details.
+        </p>
+        <Formik
+          initialValues={initialValues}
+          validationSchema={LoginSchema}
+          onSubmit={onLogin}
+        >
+          {(props: FormikProps<ILoginForm>) => {
+            const { errors, touched } = props;
+            return (
+              <Form>
+                <div className="mb-4">
+                  <label
+                    htmlFor="email"
+                    className="block text-gray-700 text-sm font-bold mb-2"
+                  >
+                    Email
+                  </label>
+                  <Field
+                    type="email"
+                    name="login"
+                    placeholder="Enter your email"
+                    className="w-full p-2 border rounded"
+                  />
+                  {touched.login && errors.login && (
+                    <div className="text-red-500 text-sm mt-1">
+                      {errors.login}
                     </div>
-                    <div className="mb-4">
-                      <label
-                        htmlFor="password"
-                        className="block text-gray-700 text-sm font-bold mb-2"
-                      >
-                        Password
-                      </label>
-                      <Field
-                        type="password"
-                        name="password"
-                        placeholder="Enter your password"
-                        className="w-full p-2 border rounded"
-                      />
-                      {touched.password && errors.password && (
-                        <div className="text-red-500 text-sm mt-1">
-                          {errors.password}
-                        </div>
-                      )}
+                  )}
+                </div>
+                <div className="mb-4">
+                  <label
+                    htmlFor="password"
+                    className="block text-gray-700 text-sm font-bold mb-2"
+                  >
+                    Password
+                  </label>
+                  <Field
+                    type="password"
+                    name="password"
+                    placeholder="Enter your password"
+                    className="w-full p-2 border rounded"
+                  />
+                  {touched.password && errors.password && (
+                    <div className="text-red-500 text-sm mt-1">
+                      {errors.password}
                     </div>
-                    <button
-                      type="submit"
-                      className="w-full bg-red-600 text-white p-2 rounded hover:bg-red-700"
+                  )}
+                </div>
+                <button
+                  type="submit"
+                  className="w-full bg-red-600 text-white p-2 rounded hover:bg-red-700"
+                >
+                  Login
+                </button>
+                <div className="text-center mt-4">
+                  <p className="text-sm text-gray-700">
+                    Tidak Mempunyai akun?{" "}
+                    <a
+                      href="/register"
+                      className="text-blue-500 hover:underline"
                     >
-                      Login
-                    </button>
-                    <div className="text-center mt-4">
-                      <p className="text-sm text-gray-700">
-                        Tidak Mempunyai akun?{" "}
-                        <a
-                          href="/register"
-                          className="text-blue-500 hover:underline"
-                        >
-                          Register
-                        </a>
-                      </p>
-                    </div>
-                  </Form>
-                );
-              }}
-            </Formik>
-          </div>
-        </div>
-      
+                      Register
+                    </a>
+                  </p>
+                </div>
+              </Form>
+            );
+          }}
+        </Formik>
+      </div>
+    </div>
   );
 }

@@ -1,10 +1,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { RootState } from "@/redux/store";
-import { useRouter } from "next/router";
 import Menu from "./menu";
-import Wrapper from "./wrapper";
 
 export default function Navbar() {
   // const router = useRouter();

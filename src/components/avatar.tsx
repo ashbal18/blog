@@ -39,11 +39,6 @@ const Avatar = ({ user }: { user: UserState | null }) => {
     };
   }, [isDropdownOpen]);
 
-  const handleLogout = () => {
-    dispatch(logout());
-    localStorage.removeItem("user");
-    window.location.href = "/login";
-  };
   return (
     <div ref={dropdownRef} className="relative">
       <div
@@ -99,7 +94,4 @@ const Avatar = ({ user }: { user: UserState | null }) => {
 
 export default Avatar;
 
-function dispatch(arg0: { payload: undefined; type: "user/logout"; }) {
-  throw new Error("Function not implemented.");
-}
 
