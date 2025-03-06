@@ -1,6 +1,6 @@
 import { IBlog } from "@/type";
 import { FaFacebook, FaLinkedin, FaTwitter, FaWhatsapp } from "react-icons/fa";
-import Image from 'next/image';
+import Image from "next/image";
 
 export async function generateMetadata({
   params,
@@ -37,35 +37,34 @@ export default async function page({
         {/* Sidebar */}
         <aside className="md:w-1/3 w-full flex md:block justify-center md:justify-start mb-6 md:mb-0">
           <div className="bg-white bg-opacity-90 p-4 rounded-lg shadow-lg flex md:flex-col items-center gap-4">
-            <button className="text-white bg-green-600 py-2 px-4 rounded-lg">
-              
-            </button>
+           
+            <a href="/" className="bg-yellow-500 py-2 px-4 rounded-lg">🔙</a>
 
             <p className="text-gray-700 font-semibold text-lg">Bagikan</p>
             <div className="flex gap-3 justify-center md:justify-start">
               <a
-                href={`https://www.facebook.com/sharer/sharer.php?u=%22https://www.facebook.com/sharer/sharer.php?u=%22}`}
+                href={`https://www.facebook.com/sharer/sharer.php?u=%22https://https://blogs-me.vercel.app/blog/${data.objectId}`}
                 target="_blank"
                 rel="noreferrer"
               >
                 <FaFacebook />
               </a>
               <a
-                href={`https://www.linkedin.com/sharing/share-offsite/?url=http://localhost:3000/blog/A7BFABF2-F733-491D-B42E-5D479D91F99D`}
+                href={`https://www.linkedin.com/sharing/share-offsite/?url=http://blogs-me.vercel.app/blog/${data.objectId}`}
                 target="_blank"
                 rel="noreferrer"
               >
                 <FaLinkedin />
               </a>
               <a
-                href={`https://www.twitter.com/intent/tweet?url=http://localhost:3000/blog/A7BFABF2-F733-491D-B42E-5D479D91F99D`}
+                href={`https://www.twitter.com/intent/tweet?url=http://localhost:3000/blogs-me.vercel.app/blog/${data.objectId}`}
                 target="_blank"
                 rel="noreferrer"
               >
                 <FaTwitter />
               </a>
               <a
-                href={`https://wa.me/?text=http://localhost:3000/blog/A7BFABF2-F733-491D-B42E-5D479D91F99D`}
+                href={`https://wa.me/?text=http://localhost:3000/blogs-me.vercel.app/blog/${data.objectId}`}
                 target="_blank"
                 rel="noreferrer"
               >
@@ -89,6 +88,8 @@ export default async function page({
             src={data.thumbnail}
             alt="thumbnail"
             className="rounded-lg shadow-lg w-full max-h-96 object-cover"
+            width={500}
+            height={500}
           />
           <div
             className="w-full text-gray-800 text-lg text-justify"
