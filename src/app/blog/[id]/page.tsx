@@ -32,13 +32,14 @@ export default async function page({
   );
   const data: IBlog = await res.json();
   return (
-    <div className="flex flex-col min-h-screen bg-gray-100">
+    <div className="flex flex-col min-h-screen bg-gray-200">
       <div className="flex flex-col md:flex-row bg-cover bg-center p-6 md:p-12 gap-6">
         {/* Sidebar */}
         <aside className="md:w-1/3 w-full flex md:block justify-center md:justify-start mb-6 md:mb-0">
           <div className="bg-white bg-opacity-90 p-4 rounded-lg shadow-lg flex md:flex-col items-center gap-4">
-           
-            <a href="/" className="bg-yellow-500 py-2 px-4 rounded-lg">🔙</a>
+            <a href="/" className="bg-yellow-500 py-2 px-4 rounded-lg">
+              BUTTON🔙
+            </a>
 
             <p className="text-gray-700 font-semibold text-lg">Bagikan</p>
             <div className="flex gap-3 justify-center md:justify-start">

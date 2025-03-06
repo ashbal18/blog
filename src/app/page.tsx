@@ -15,22 +15,22 @@ export default async function Home() {
   const data: IBlog[] = await res.json();
 
   return (
-    <div>
+    <div style={{ backgroundImage: 'url(bgbatik.jpg)', backgroundSize: 'cover' }}>
       <Wrapper>
-        <div className="grid w-full p-4 grid-cols-1 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-2">
-          {data.map((item, idx) => (
-            <div key={idx}>
-              <Card
-                category={item.category}
-                title={item.title}
-                thumbnail={item.thumbnail || "/default-thumbnail.jpg"}
-                name={item.author?.name || "Unknown"}
-                email={item.author?.email || "Unknown"}
-                objectId={item.objectId}
-              />
-            </div>
-          ))}
+      <div className="grid w-full p-4 grid-cols-1 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-2">
+        {data.map((item, idx) => (
+        <div key={idx}>
+          <Card
+          category={item.category}
+          title={item.title}
+          thumbnail={item.thumbnail || "/default-thumbnail.jpg"}
+          name={item.author?.name || "Unknown"}
+          email={item.author?.email || "Unknown"}
+          objectId={item.objectId}
+          />
         </div>
+        ))}
+      </div>
       </Wrapper>
     </div>
   );
