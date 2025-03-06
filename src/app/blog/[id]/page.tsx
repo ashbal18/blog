@@ -37,9 +37,9 @@ export default async function page({
         {/* Sidebar */}
         <aside className="md:w-1/3 w-full flex md:block justify-center md:justify-start mb-6 md:mb-0">
           <div className="bg-white bg-opacity-90 p-4 rounded-lg shadow-lg flex md:flex-col items-center gap-4">
-            <a href="/" className="bg-yellow-500 py-2 px-4 rounded-lg">
+            <button className="bg-yellow-500 py-2 px-4 rounded-lg">
               BUTTON🔙
-            </a>
+            </button>
 
             <p className="text-gray-700 font-semibold text-lg">Bagikan</p>
             <div className="flex gap-3 justify-center md:justify-start">
